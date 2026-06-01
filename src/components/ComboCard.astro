@@ -1,0 +1,46 @@
+---
+interface Props {
+    hex1: string;
+    hex2: string;
+}
+
+const { hex1, hex2 } = Astro.props;
+---
+
+<div
+    class="flex flex-row border-2 border-zinc-900 bg-zinc-50 shadow-[4px_4px_0px_0px_#18181b] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+>
+    <div
+        data-copy={`#${hex1}`}
+        class="color-btn flex w-1/2 cursor-pointer flex-col border-r-2 border-zinc-900 transition-colors hover:bg-zinc-200"
+    >
+        <div
+            class="h-28 w-full border-b-2 border-zinc-900"
+            style={`background-color: #${hex1};`}
+        >
+        </div>
+        <div class="flex w-full items-center justify-center p-4">
+            <span
+                class="text-sm font-bold uppercase tracking-wider text-zinc-900"
+                >#{hex1}</span
+            >
+        </div>
+    </div>
+
+    <div
+        data-copy={`#${hex2}`}
+        class="color-btn flex w-1/2 cursor-pointer flex-col transition-colors hover:bg-zinc-200"
+    >
+        <div
+            class="h-28 w-full border-b-2 border-zinc-900"
+            style={`background-color: #${hex2};`}
+        >
+        </div>
+        <div class="flex w-full items-center justify-center p-4">
+            <span
+                class="text-sm font-bold uppercase tracking-wider text-zinc-900"
+                >#{hex2}</span
+            >
+        </div>
+    </div>
+</div>

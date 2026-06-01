@@ -1,0 +1,39 @@
+---
+
+---
+
+<div
+    id="toast"
+    class="pointer-events-none fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 items-center gap-3 bg-zinc-900 px-6 py-3 text-sm font-bold uppercase tracking-widest text-zinc-50 opacity-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] transition-opacity duration-150"
+>
+    <div id="toast-color" class="h-5 w-5 border-2 border-zinc-50"></div>
+    <span id="toast-text">COPIED</span>
+</div>
+
+<script>
+    let toastTimeout;
+    const toast = document.getElementById("toast");
+    const toastText = document.getElementById("toast-text");
+    const toastColor = document.getElementById("toast-color");
+
+    document.querySelectorAll(".color-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const hexString = btn.getAttribute("data-copy");
+            if (!hexString || !toast || !toastText || !toastColor) return;
+
+            navigator.clipboard.writeText(hexString).then(() => {
+                toastText.textContent = `COPIED: ${hexString}`;
+                toastColor.style.backgroundColor = hexString;
+
+                toast.classList.remove("opacity-0");
+                toast.classList.add("opacity-100");
+
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toast.classList.remove("opacity-100");
+                    toast.classList.add("opacity-0");
+                }, 1500);
+            });
+        });
+    });
+</script>
