@@ -7,7 +7,7 @@ import colors from "~/data/colors.json";
 ---
 
 <Layout
-    title="lonsu colors"
+    title="lonsucolors."
     description="A curated collection of colors that I personally use."
 >
     <header
@@ -15,12 +15,12 @@ import colors from "~/data/colors.json";
     >
         <a href="/" class="text-zinc-900 no-underline">
             <h1
-                class="text-[12vw] font-bold leading-[0.85] tracking-tighter md:text-7xl"
+                class="text-[12vw] font-bold leading-[0.8] tracking-tighter md:text-7xl"
             >
                 lonsu
             </h1>
             <h1
-                class="text-[12vw] font-bold leading-[0.85] tracking-tighter md:text-7xl"
+                class="text-[12vw] font-bold leading-[0.8] tracking-tighter md:text-7xl"
             >
                 colors.
             </h1>
@@ -32,12 +32,12 @@ import colors from "~/data/colors.json";
             <h2
                 class="mb-4 inline-block pb-2 text-3xl font-bold tracking-tighter"
             >
-                best blacks
+                dark colors
             </h2>
             <div
                 class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
             >
-                {colors.blacks.map((hex) => <SingleCard hex={hex} />)}
+                {colors.dark.map((hex) => <SingleCard hex={hex} />)}
             </div>
         </section>
 
@@ -45,12 +45,12 @@ import colors from "~/data/colors.json";
             <h2
                 class="mb-4 inline-block pb-2 text-3xl font-bold tracking-tighter"
             >
-                best whites
+                light colors
             </h2>
             <div
                 class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
             >
-                {colors.whites.map((hex) => <SingleCard hex={hex} />)}
+                {colors.light.map((hex) => <SingleCard hex={hex} />)}
             </div>
         </section>
 
@@ -58,7 +58,7 @@ import colors from "~/data/colors.json";
             <h2
                 class="mb-4 inline-block pb-2 text-3xl font-bold tracking-tighter"
             >
-                good combos
+                combo colors
             </h2>
             <div
                 class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
@@ -71,6 +71,5 @@ import colors from "~/data/colors.json";
             </div>
         </section>
     </main>
-
     <Toast />
 </Layout>
