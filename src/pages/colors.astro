@@ -17,12 +17,7 @@ import colors from "~/data/colors.json";
             <h1
                 class="text-[12vw] font-bold leading-[0.8] tracking-tighter md:text-7xl"
             >
-                lonsu
-            </h1>
-            <h1
-                class="text-[12vw] font-bold leading-[0.8] tracking-tighter md:text-7xl"
-            >
-                colors.
+                lonsu<br />colors.
             </h1>
         </a>
     </header>
@@ -34,11 +29,18 @@ import colors from "~/data/colors.json";
             >
                 dark colors
             </h2>
-            <div
+            <ul
+                role="list"
                 class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
             >
-                {colors.dark.map((hex) => <SingleCard hex={hex} />)}
-            </div>
+                {
+                    colors.dark.map((hex) => (
+                        <li>
+                            <SingleCard hex={hex} />
+                        </li>
+                    ))
+                }
+            </ul>
         </section>
 
         <section>
@@ -47,11 +49,18 @@ import colors from "~/data/colors.json";
             >
                 light colors
             </h2>
-            <div
+            <ul
+                role="list"
                 class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
             >
-                {colors.light.map((hex) => <SingleCard hex={hex} />)}
-            </div>
+                {
+                    colors.light.map((hex) => (
+                        <li>
+                            <SingleCard hex={hex} />
+                        </li>
+                    ))
+                }
+            </ul>
         </section>
 
         <section>
@@ -60,16 +69,20 @@ import colors from "~/data/colors.json";
             >
                 combo colors
             </h2>
-            <div
+            <ul
+                role="list"
                 class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
             >
                 {
                     colors.combos.map((combo) => (
-                        <ComboCard hex1={combo[0]} hex2={combo[1]} />
+                        <li>
+                            <ComboCard hex1={combo[0]} hex2={combo[1]} />
+                        </li>
                     ))
                 }
-            </div>
+            </ul>
         </section>
     </main>
+
     <Toast />
 </Layout>

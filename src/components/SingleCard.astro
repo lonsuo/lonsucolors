@@ -7,19 +7,27 @@ const { hex } = Astro.props;
 ---
 
 <div
+    role="button"
+    tabindex="0"
+    aria-label={`Copy color #${hex} to clipboard`}
     data-copy={`#${hex}`}
-    class="color-btn flex w-full cursor-pointer flex-col border-2 border-zinc-900 bg-zinc-50 shadow-[4px_4px_0px_0px_#18181b] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+    class="color-btn flex w-full cursor-pointer flex-col border-2 border-zinc-900 bg-zinc-50 shadow-brutalist transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:outline-none focus-visible:ring-4 focus-visible:ring-zinc-900 focus-visible:ring-offset-2"
 >
     <div
         class="h-28 w-full border-b-2 border-zinc-900"
         style={`background-color: #${hex};`}
+        aria-hidden="true"
     >
     </div>
+    
     <div
         class="flex w-full items-center justify-center p-4 transition-colors hover:bg-zinc-200"
     >
-        <span class="text-sm font-bold uppercase tracking-wider text-zinc-900"
-            >#{hex}</span
+        <span 
+            class="text-sm font-bold uppercase tracking-wider text-zinc-900"
+            aria-hidden="true"
         >
+            #{hex}
+        </span>
     </div>
 </div>

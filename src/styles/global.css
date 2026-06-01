@@ -1,5 +1,7 @@
+@import "@fontsource-variable/space-grotesk/wght.css";
 @import "tailwindcss";
 
 @theme {
     --font-sans: "Space Grotesk", sans-serif;
+    --shadow-brutalist: 4px 4px 0px 0px #18181b99;
 }
